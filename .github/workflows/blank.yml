@@ -26,19 +26,10 @@ jobs:
         run: wget https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/snapshot/linux-6.1-rc4.tar.gz
       - name: Extract kernel sources
         run: tar -xzvf linux-6.1-rc4.tar.gz
-      - name: Make oldconfig
+      - name: Make
         run: |
           cd linux-6.1-rc4
           make oldconfig -j2
-      - name: Make mrproper
-        run: |
-          cd linux-6.1-rc4
           make mrproper -j2
-      - name: Make kernel
-        run: | 
-          cd linux-6.1-rc4
           make -j2
-      - name: Make modules
-        run: | 
-          cd linux-6.1-rc4
           make modules -j2

@@ -27,7 +27,7 @@ jobs:
       - name: Extract kernel sources
         run: tar -xzvf linux-6.1-rc4.tar.gz
       - name: Get config.gz
-        run: wget -O https://github.com/arlcrow/build-kernel/raw/main/config.gz
+        run: wget https://github.com/arlcrow/build-kernel/raw/main/config.gz
       - name: Make
         run: |
           cd linux-6.1-rc4

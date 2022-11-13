@@ -31,7 +31,7 @@ jobs:
       - name: Make
         run: |
           cd linux-6.1-rc4
-          zcat ../config.gz > .config
           make mrproper -j2
+          zcat ../config.gz > .config
           make -j2
           make modules -j2
